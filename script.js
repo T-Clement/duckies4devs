@@ -111,19 +111,36 @@ function cartBtnChange() {
 
 // ACCORDIONS
 
+
+// localStorage
+
+// get in localStorage last viewing
+let getLastViewing = localStorage.getItem("lastview");
+// replace ".page-txt" section with section in localStorage
+document.querySelector(".page-txt").innerHTML = JSON.parse(getLastViewing);
+
+
 const titles = document.querySelectorAll(".js-product-subttl");
 console.log(titles);
 
 titles.forEach(function(title){
     title.addEventListener("click", function() {
-        console.log(this);
-        // toggle class '.closed'
+        // console.log(this);
         title.classList.toggle("closed");
         let data = title.id;
-        console.log("id: " + data);
+        // console.log("id: " + data);
         const toggleText = document.querySelector(`[data-toggle = ${data}]`);
-        console.log(toggleText);
+        // console.log(toggleText);
         toggleText.classList.toggle('closed');
-        console.log(toggleText);
+        // console.log(toggleText);
+
+        // get 'page-txt' section
+        const lastViewing = document.querySelector(".page-txt").innerHTML;
+        // console.log(lastViewing);
+
+        // put section in localStorage
+        const lastViewingJSON = JSON.stringify(lastViewing);
+        // console.log(lastViewingJSON);
+        localStorage.setItem("lastview", lastViewingJSON)
     })
 })
