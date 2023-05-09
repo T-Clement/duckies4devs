@@ -177,6 +177,13 @@ body {
     aspect-ratio: 1/1;
     font-size: 1.5rem;
 }
+
+
+/* add css style text toggle*/
+[data-toggle].closed {
+    display: none;
+}
+
 .product-acrd-lnk.closed::after {
     content: "🔻";
 }

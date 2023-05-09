@@ -81,7 +81,7 @@ thumbsList.addEventListener("mouseover", function(event) {
 
 // -----------------------------------------------------------
 
-// ADD TO CART MOBILE
+// ADD TO CART
 
 // select cart quantity in header
 const headerQuantity = document.querySelector(".cart > .cart-nb");
@@ -105,3 +105,25 @@ function cartBtnChange() {
     this.disabled = true;
     this.removeEventListener("click", cartBtnChange);
 }
+
+
+// ------------------------------------------------------------
+
+// ACCORDIONS
+
+const titles = document.querySelectorAll(".js-product-subttl");
+console.log(titles);
+
+titles.forEach(function(title){
+    title.addEventListener("click", function() {
+        console.log(this);
+        // toggle class '.closed'
+        title.classList.toggle("closed");
+        let data = title.id;
+        console.log("id: " + data);
+        const toggleText = document.querySelector(`[data-toggle = ${data}]`);
+        console.log(toggleText);
+        toggleText.classList.toggle('closed');
+        console.log(toggleText);
+    })
+})
