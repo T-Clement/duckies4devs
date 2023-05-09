@@ -267,7 +267,6 @@ body {
 .add-cta[disabled] {
     background-color: var(--background-dark);
     cursor: not-allowed;
-    
 }
 /* PICTURES */
 
