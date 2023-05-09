@@ -82,5 +82,18 @@ thumbsList.addEventListener("mouseover", function(event) {
 // -----------------------------------------------------------
 
 // ADD TO CART MOBILE
+const headerQuantity = document.querySelector(".cart > .cart-nb");
+console.log("header: " + headerQuantity.textContent)
 
+const addToCartButton = document.querySelector(".js-add-cta");
+console.log(addToCartButton);
 
+ const addQuantity = document.querySelector(".js-add-qty");
+//  console.log(addQuantity.value);
+addToCartButton.addEventListener("click", function () {
+    let quantity = addQuantity.value;
+    if (quantity > 99) {
+        quantity = "99+";
+    }
+    headerQuantity.textContent = quantity;
+})
