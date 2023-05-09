@@ -127,6 +127,7 @@ titles.forEach(function(title){
     title.addEventListener("click", function() {
         // console.log(this);
         title.classList.toggle("closed");
+
         let data = title.id;
         // console.log("id: " + data);
         const toggleText = document.querySelector(`[data-toggle = ${data}]`);
@@ -135,7 +136,7 @@ titles.forEach(function(title){
         // console.log(toggleText);
 
         // get 'page-txt' section
-        const lastViewing = document.querySelector(".page-txt").innerHTML;
+        const lastViewing = document.querySelector(".page-txt").innerHTML.trim();
         // console.log(lastViewing);
 
         // put section in localStorage
@@ -144,3 +145,53 @@ titles.forEach(function(title){
         localStorage.setItem("lastview", lastViewingJSON)
     })
 })
+
+
+// ----------------------------------------------------------------
+// SIMILAR PRODUCTS
+
+// Mobile
+
+const productsImgs = document.querySelectorAll('.js-similar-img');
+const productsItems = document.querySelectorAll(".js-similar-itm");
+const productsList = document.querySelectorAll(".js-similar-lst");
+const carousselSection = document.querySelector('.caroussel-container');
+console.log(productsImgs);
+console.log(productsItems);
+console.log(productsList);
+console.log(carousselSection);
+
+
+//create buttons caintainer 
+const buttonsContainer = document.createElement("div");
+buttonsContainer.setAttribute("class", "buttons-container");
+carousselSection.appendChild(buttonsContainer)
+
+
+// create left button
+const buttonLeft = document.createElement("button");
+buttonLeft.setAttribute("type", "button");
+buttonLeft.innerText = "<";
+buttonLeft.classList.add('similar-btn');
+buttonsContainer.appendChild(buttonLeft);
+
+// create right button
+const buttonRight = document.createElement("button");
+buttonRight.setAttribute("type", "button");
+buttonRight.innerText = ">";
+buttonRight.classList.add('similar-btn');
+buttonsContainer.appendChild(buttonRight);
+
+
+
+
+
+productsItems.forEach(function(item) {
+    // item.style.visibility = 'hidden';
+    // item.style.width = '100vw';
+    // item.dataset.slide = item;
+    // productsItems[0].style.visibility = "inherit";
+    // productsItems[0].style.width = "100vw";
+});
+productsItems[2].style.zIndex = "100";
+productsItems[2].style.backgroundColor = "black";

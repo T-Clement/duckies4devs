@@ -346,8 +346,16 @@ body {
     max-width: var(--container-width);
     margin: 0 auto;
     overflow: hidden;
+    /* position: relative; */
 }
+/* 
+.similar-itm {
+    
+} */
+
 .similar-lst {
+    position: relative;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
@@ -367,6 +375,7 @@ body {
 .similar-img {
     width:100%;
 }
+
 .similar-ttl {
     font-size: 1.5rem;
     text-align: center;
@@ -385,6 +394,31 @@ body {
     font-weight: bold;
     color: white;
     background-color: var(--primary-color);
+}
+
+
+/*-----------------------------------------*/
+.similar-btn {
+    /* position: absolute; */
+    /* top: calc(50% - 1.5rem); */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 4rem;
+    aspect-ratio: 1/1;
+    font-size: 3rem;
+    cursor: pointer; 
+}
+
+.caroussel-container {
+    width: 100%;
+    position: relative;
+}
+
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (min-width: 768px) {
@@ -506,3 +540,5 @@ body {
 .legal-lnk {
     color: #fff;
 }
+
+
