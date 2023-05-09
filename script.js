@@ -92,10 +92,16 @@ console.log(addToCartButton);
 const addQuantity = document.querySelector(".js-add-qty");
 
 // click on button add to cart put quantity in input field in header
-addToCartButton.addEventListener("click", function () {
+// addToCartButton.disabled = false;
+addToCartButton.addEventListener("click", cartBtnChange)
+
+function cartBtnChange() {
     let quantity = addQuantity.value;
     if (quantity > 99) {
         quantity = "99+";
     }
     headerQuantity.textContent = quantity;
-})
+    addToCartButton.innerText = "Déjà au panier";
+    this.disabled = true;
+    this.removeEventListener("click", cartBtnChange);
+}
